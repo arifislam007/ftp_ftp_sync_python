@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FTP Connection</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">Connect to FTP Server</h1>
+      <form method="post">
+        <div class="form-group">
+          <label for="ftp_server">FTP Server</label>
+          <input type="text" class="form-control" id="ftp_server" name="ftp_server" required>
+        </div>
+        <div class="form-group">
+          <label for="ftp_user">FTP User</label>
+          <input type="text" class="form-control" id="ftp_user" name="ftp_user" required>
+        </div>
+        <div class="form-group">
+          <label for="ftp_password">FTP Password</label>
+          <input type="password" class="form-control" id="ftp_password" name="ftp_password" required>
+        </div>
+        <div class="form-group">
+          <label for="ftp_directory">FTP Directory</label>
+          <input type="text" class="form-control" id="ftp_directory" name="ftp_directory" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Connect</button>
+      </form>
+      {% if result %}
+      <div class="mt-5">
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
+
