@@ -14,6 +14,7 @@ def get_ftp_details():
         cursor = connection.cursor(dictionary=True)
         cursor.execute("SELECT * FROM ftp_connections WHERE status = 'pending' LIMIT 1")
         ftp_details = cursor.fetchone()
+        cursor.execute("UPDATE ftp_connections SET status = 'processing' WHERE id = %s", (ftp_details['id'],))
         cursor.close()
         connection.close()
         return ftp_details
